@@ -27,10 +27,14 @@
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
-                            <tr class="table-primary" *ngFor="let usuario of usuarios">
+                            <tr class="table-light" *ngFor="let usuario of usuarios">
                                 <td scope="row">{{usuario.numeroDocumento}}</td>
                                 <td>{{usuario.nombreApellido}}</td>
-                                <td>acciones</td>
+                                <td class="text-center">
+                                    <button class="btn btn-outline-success me-2" type="button" data-bs-toggle="modal" data-bs-target="#modalVerUsuario"><i class="fa-solid fa-eye"></i></button>
+                                    <button class="btn btn-outline-warning" type="button" data-bs-toggle="modal" data-bs-target="#modalEditarUsuario"><i class="fa-solid fa-pencil"></i></button>
+                                    <button class="btn btn-outline-danger ms-2" type="button" data-bs-toggle="modal" data-bs-target="#modalEliminarUsuario"><i class="fa-solid fa-trash"></i></button>
+                                </td>
                             </tr>
                         </tbody>
                         <tfoot>
