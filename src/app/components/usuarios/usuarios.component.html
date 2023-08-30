@@ -11,7 +11,34 @@
                     <input class="form-control me-2" type="search" placeholder="Buscar usuario" aria-label="Search">
                     <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
+                <div class="d-flex justify-content-center align-items-center ms-2">
+                    <button class="btn btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#modalNuevoUsuario"><i class="fa-solid fa-plus"></i></button>
+                </div>
             </div>
+        </div>
+        <div class="col-12 mb-4">
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>DNI</th>
+                            <th>Nombre</th>
+                            <th>Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr class="table-primary" *ngFor="let usuario of usuarios">
+                                <td scope="row">{{usuario.numeroDocumento}}</td>
+                                <td>{{usuario.nombreApellido}}</td>
+                                <td>acciones</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            
+                        </tfoot>
+                </table>
+            </div>
+            
         </div>
     </div>
 </div>

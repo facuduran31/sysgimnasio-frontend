@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
 import { Usuario } from 'src/models/usuario';
 
 @Injectable({
@@ -21,7 +22,7 @@ export class UsuariosService {
   constructor(private http: HttpClient) { }
 
   getUsuarios() {
-    return this.http.get(this.apiURL, this.httpOptions);
+    return this.http.get(this.apiURL, this.httpOptions).pipe(map((response: any) => response as Usuario[]));
   }
 
   postUsuarios(usuario:Usuario) {
